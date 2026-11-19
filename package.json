@@ -1,0 +1,16 @@
+{
+  "name": "dsh-orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Runtime local para DSH, Codex CLI, Claude Code e GitHub CLI com sessões tmux.",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "check": "node --check src/server.mjs && node --check src/lib.mjs && node --check bin/orch.mjs && node --check bin/orchestrator-mcp.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,44 @@
+services:
+  runtime:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        RUNTIME_UID: ${RUNTIME_UID:-1000}
+        RUNTIME_GID: ${RUNTIME_GID:-1000}
+        DSH_VERSION: 0.1.1-rc.2
+        CODEX_VERSION: 0.149.1
+        CLAUDE_CODE_VERSION: 2.1.241
+    restart: unless-stopped
+    environment:
+      HOME: /home/agent
+      TERM: xterm-256color
+      COLORTERM: truecolor
+      ORCHESTRATOR_HOST: 0.0.0.0
+      ORCHESTRATOR_PORT: 3000
+      ORCHESTRATOR_URL: http://127.0.0.1:3000
+      ORCHESTRATOR_TOKEN: ${ORCHESTRATOR_TOKEN:?execute ./scripts/bootstrap.sh primeiro}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OLLAMA_API_KEY: ollama-local
+      DSH_OPENROUTER_MODEL: ${DSH_OPENROUTER_MODEL:-openrouter/auto}
+      DSH_OLLAMA_MODEL: ${DSH_OLLAMA_MODEL:-qwen3-coder:30b}
+    ports:
+      - "127.0.0.1:${DSH_HOST_PORT:-9080}:9081"
+      - "127.0.0.1:${ORCHESTRATOR_HOST_PORT:-3000}:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${PROJECTS_DIR:?defina PROJECTS_DIR no .env}:/workspace:rw
+      - ${RUNTIME_HOME_DIR:?defina RUNTIME_HOME_DIR no .env}:/home/agent:rw
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=512m
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:3000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

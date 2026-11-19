@@ -1,0 +1,12 @@
+- insert:
+    - id: mcp-orchestrator
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: orchestrator
+        transport: stdio
+        command: node
+        args:
+          - /opt/dsh-orchestrator/bin/orchestrator-mcp.mjs
+        env:
+          ORCHESTRATOR_URL: http://127.0.0.1:3000
+          ORCHESTRATOR_TOKEN: !!js process.env.ORCHESTRATOR_TOKEN

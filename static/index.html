@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DSH Orchestrator</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">LOCAL AGENT RUNTIME</p>
+      <h1>DSH Orchestrator</h1>
+      <p>Abra e acompanhe sessões de Codex, Claude Code e shell.</p>
+    </div>
+    <button id="tokenButton" class="secondary">Configurar token</button>
+  </header>
+
+  <main>
+    <section class="panel create">
+      <h2>Nova sessão</h2>
+      <form id="createForm">
+        <label>Agente
+          <select name="agent">
+            <option value="codex">Codex</option>
+            <option value="claude">Claude Code</option>
+            <option value="shell">Shell</option>
+          </select>
+        </label>
+        <label>Nome <input name="name" placeholder="corrigir-api"></label>
+        <label>Diretório em /workspace <input name="cwd" value="/workspace" required></label>
+        <label class="wide">Tarefa <textarea name="prompt" rows="4" placeholder="Descreva a tarefa para o agente"></textarea></label>
+        <label class="check"><input name="worktree" type="checkbox"> Criar worktree Git isolado</label>
+        <label>Base Git <input name="base" value="HEAD"></label>
+        <button type="submit">Iniciar sessão</button>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="panel sessions">
+      <div class="section-head">
+        <h2>Sessões</h2>
+        <button id="refreshButton" class="secondary">Atualizar</button>
+      </div>
+      <div id="sessionsList" class="cards"></div>
+    </section>
+
+    <section class="panel terminal">
+      <div class="section-head">
+        <div><span class="eyebrow">SAÍDA</span><h2 id="terminalTitle">Selecione uma sessão</h2></div>
+        <button id="stopButton" class="danger" disabled>Parar</button>
+      </div>
+      <pre id="output">Nenhuma sessão selecionada.</pre>
+      <form id="inputForm">
+        <input id="sessionInput" placeholder="Envie uma instrução à sessão" disabled>
+        <button id="sendButton" disabled>Enviar</button>
+      </form>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
