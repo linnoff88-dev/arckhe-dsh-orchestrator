@@ -4,7 +4,7 @@
 
 ## 📖 User Guide
 
-Complete guide (landing page + step-by-step instructions): **https://inematds.github.io/dsh-orchestrator/guia/en/**
+Complete guide (landing page + step-by-step instructions): **https://linnoff88-dev.github.io/
 
 Local, reproducible, self-contained environment for using:
 

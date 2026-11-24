@@ -1,4 +1,4 @@
-﻿# DSH Orchestrator
+# DSH Orchestrator
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -10,7 +10,7 @@
 
 ## ðŸ“– Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/dsh-orchestrator/guia/**
+Guia completo (landing + passo a passo): **https://linnoff88-dev.github.io/
 
 Ambiente local, reproduzÃ­vel e autocontido para usar:
 
@@ -89,7 +89,7 @@ TambÃ©m Ã© possÃ­vel criar e controlar sessÃµes no painel web. O DSH vÃ
 
 ### AtualizaÃ§Ã£o de seguranÃ§a (Node e certificados)
 
-NÃ£o recompile do zero para atualizar o Node ou a lista de certificados: o `build --pull` traz versÃµes novas dos plugins `cordis` e o DSH deixa de subir. Use a camada de `docker/Dockerfile.seguranca`, que parte da imagem que funciona e troca sÃ³ o Node e o `ca-certificates`. Antes, guarde a imagem atual com uma tag de reserva; depois, confira `./scripts/status.sh` e o painel web. Guia completo: <https://inematds.github.io/auditoria-seguranca/guia/>.
+NÃ£o recompile do zero para atualizar o Node ou a lista de certificados: o `build --pull` traz versÃµes novas dos plugins `cordis` e o DSH deixa de subir. Use a camada de `docker/Dockerfile.seguranca`, que parte da imagem que funciona e troca sÃ³ o Node e o `ca-certificates`. Antes, guarde a imagem atual com uma tag de reserva; depois, confira `./scripts/status.sh` e o painel web. Guia completo: <https://linnoff88-dev.github.io/
 
 ## Logins e chaves
 
