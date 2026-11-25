@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-if [[ ! -r /etc/os-release ]]; then echo "Sistema não identificado."; exit 1; fi
+if [[ ! -r /etc/os-release ]]; then echo "Sistema nêo identificado."; exit 1; fi
 . /etc/os-release
 case "${ID:-}" in
   debian|ubuntu) ;;
@@ -21,4 +21,4 @@ printf 'Types: deb\nURIs: https://download.docker.com/linux/%s\nSuites: %s\nComp
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker "$USER"
-echo "Docker instalado. Saia e entre novamente na sessão para aplicar o grupo docker."
+echo "Docker instalado. Saia e entre novamente na sessêo para aplicar o grupo docker."

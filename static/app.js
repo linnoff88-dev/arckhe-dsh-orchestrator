@@ -24,7 +24,7 @@ function escapeHtml(value) {
 function renderSessions() {
   const target = $('#sessionsList');
   if (!state.sessions.length) {
-    target.innerHTML = '<p>Nenhuma sessão criada.</p>';
+    target.innerHTML = '<p>Nenhuma sessêo criada.</p>';
     return;
   }
   target.innerHTML = state.sessions.map((session) => `
@@ -88,7 +88,7 @@ $('#createForm').addEventListener('submit', async (event) => {
       agent:form.get('agent'), name:form.get('name'), cwd:form.get('cwd'), prompt:form.get('prompt'),
       worktree:form.get('worktree') === 'on', base:form.get('base')
     }) });
-    $('#message').textContent = `Sessão ${data.session.id} iniciada.`;
+    $('#message').textContent = `Sessêo ${data.session.id} iniciada.`;
     await refresh();
     await selectSession(data.session.id);
   } catch (error) { $('#message').textContent = error.message; }
@@ -106,7 +106,7 @@ $('#inputForm').addEventListener('submit', async (event) => {
 });
 
 $('#stopButton').addEventListener('click', async () => {
-  if (!state.selected || !confirm('Parar esta sessão?')) return;
+  if (!state.selected || !confirm('Parar esta sessêo?')) return;
   try {
     await api(`/api/sessions/${encodeURIComponent(state.selected)}/stop`, { method:'POST', body:'{}' });
     await refresh();

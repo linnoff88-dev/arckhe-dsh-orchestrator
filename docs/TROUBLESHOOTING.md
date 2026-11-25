@@ -1,4 +1,4 @@
-# Solução de problemas
+# Soluçêo de problemas
 
 ## Porta já está em uso
 
@@ -9,7 +9,7 @@ DSH_HOST_PORT=9082
 ORCHESTRATOR_HOST_PORT=3002
 ```
 
-## Permissão negada em `RUNTIME_HOME_DIR` ou projetos
+## Permissêo negada em `RUNTIME_HOME_DIR` ou projetos
 
 Confira `RUNTIME_UID` e `RUNTIME_GID` no `.env` com `id -u` e `id -g`, depois reconstrua a imagem.
 
@@ -25,11 +25,11 @@ Execute novamente `./scripts/configure-openrouter.sh` e veja apenas se a variáv
 docker compose exec runtime bash -lc 'test -n "$OPENROUTER_API_KEY" && echo presente || echo ausente'
 ```
 
-## Ollama não responde
+## Ollama nêo responde
 
-`127.0.0.1` do host não é o loopback do container. O template usa `host.docker.internal`; verifique o bind e firewall do Ollama, e teste `curl http://host.docker.internal:11434/api/tags` dentro do runtime.
+`127.0.0.1` do host nêo é o loopback do container. O template usa `host.docker.internal`; verifique o bind e firewall do Ollama, e teste `curl http://host.docker.internal:11434/api/tags` dentro do runtime.
 
-## DSH não mostra ferramentas MCP
+## DSH nêo mostra ferramentas MCP
 
 Confira:
 
@@ -40,6 +40,6 @@ docker compose exec runtime node /opt/dsh-orchestrator/bin/orchestrator-mcp.mjs
 
 No segundo comando, envie uma linha JSON-RPC `initialize`. Veja os logs do DSH para erros do plugin `@deepseek-ai/dsh-mcp-client`.
 
-## Sessão encerrada após recriar o container
+## Sessêo encerrada após recriar o container
 
-Isso é esperado. Arquivos e autenticação persistem, mas processos tmux não. Use `codex resume` ou `claude --resume` no shell, ou abra uma nova sessão apontando para o mesmo worktree.
+Isso é esperado. Arquivos e autenticaçêo persistem, mas processos tmux nêo. Use `codex resume` ou `claude --resume` no shell, ou abra uma nova sessêo apontando para o mesmo worktree.

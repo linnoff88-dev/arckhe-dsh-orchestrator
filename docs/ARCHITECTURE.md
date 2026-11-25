@@ -5,8 +5,8 @@ Navegador (127.0.0.1)
   ├── :9080 → socat → DSH web em 127.0.0.1:9080 no container
   └── :3000 → Orchestrator HTTP
                     │
-                    ├── tmux → codex (sessão interativa)
-                    ├── tmux → claude (sessão interativa)
+                    ├── tmux → codex (sessêo interativa)
+                    ├── tmux → claude (sessêo interativa)
                     └── tmux → bash
 
 DSH ── stdio MCP ── orchestrator-mcp.mjs ── HTTP local ── Orchestrator
@@ -19,13 +19,13 @@ Há um único container de runtime. Isso permite que DSH, Codex, Claude, Git e `
 
 ## Rede
 
-O DSH aceita acesso web em loopback. O `socat` cria uma ponte interna em `9081`; o Compose publica essa ponte somente no loopback do host. O painel também é publicado somente em `127.0.0.1`. Para acesso remoto, prefira túnel SSH ou uma VPN autenticada; não troque o bind para `0.0.0.0` sem TLS e controle de acesso.
+O DSH aceita acesso web em loopback. O `socat` cria uma ponte interna em `9081`; o Compose publica essa ponte somente no loopback do host. O painel também é publicado somente em `127.0.0.1`. Para acesso remoto, prefira túnel SSH ou uma VPN autenticada; nêo troque o bind para `0.0.0.0` sem TLS e controle de acesso.
 
 Ollama no host é alcançado por `host.docker.internal`. OpenRouter requer saída HTTPS do container.
 
 ## Sessões e worktrees
 
-O servidor cria uma sessão tmux por agente e grava metadados atomically em `~/.orchestrator/sessions.json`. Um `cwd` é aceito somente se seu caminho real estiver dentro de `/workspace`, inclusive contra escapes por links simbólicos.
+O servidor cria uma sessêo tmux por agente e grava metadados atomically em `~/.orchestrator/sessions.json`. Um `cwd` é aceito somente se seu caminho real estiver dentro de `/workspace`, inclusive contra escapes por links simbólicos.
 
 Com `worktree: true`, o orchestrator descobre a raiz Git e cria:
 
@@ -34,7 +34,7 @@ Com `worktree: true`, o orchestrator descobre a raiz Git e cria:
 branch: orchestrator/<session-id>
 ```
 
-O orchestrator não faz merge, push ou exclusão automática. Essas ações continuam explícitas e auditáveis.
+O orchestrator nêo faz merge, push ou exclusêo automática. Essas ações continuam explícitas e auditáveis.
 
 ## API
 

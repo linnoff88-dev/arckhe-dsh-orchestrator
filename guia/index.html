@@ -123,7 +123,7 @@
 <a class="btn ghost" href="https://github.com/linnoff88-dev/dsh-orchestrator" rel="noopener" target="_blank">Ver no GitHub</a>
 </div>
 </div>
-<figure><img alt="Ambiente visual de orquestração de agentes de código" src="assets/hero.png"/></figure>
+<figure><img alt="Ambiente visual de orquestraçêo de agentes de código" src="assets/hero.png"/></figure>
 </div>
 </header>
 <section id="oque"><div class="wrap">
@@ -138,8 +138,8 @@
 </div></section>
 <section id="fluxo"><div class="wrap">
 <span class="chip">Como funciona</span>
-<h2>Do pedido à sessão em poucos passos</h2>
-<p class="sub">O DSH chama ferramentas MCP; o orchestrator valida o projeto e abre o agente em uma sessão tmux acompanhável pela web ou CLI.</p>
+<h2>Do pedido à sessêo em poucos passos</h2>
+<p class="sub">O DSH chama ferramentas MCP; o orchestrator valida o projeto e abre o agente em uma sessêo tmux acompanhável pela web ou CLI.</p>
 <div class="flow">
 <span>DSH ou painel</span><span class="arr">→</span>
 <span>API autenticada</span><span class="arr">→</span>
@@ -154,14 +154,14 @@
 <p class="sub">O build baixa o DSH e as demais CLIs. Você só precisa do Docker e das contas que pretende usar.</p>
 <div class="grid g3">
 <div class="card"><h3>Docker + Compose</h3><p>Em Debian ou Ubuntu, use o instalador incluído.</p><pre><span class="k">./scripts/install-docker-debian.sh</span></pre></div>
-<div class="card"><h3>Contas interativas</h3><p>OpenAI, Anthropic e GitHub são autenticados pelos fluxos oficiais.</p><pre><span class="k">./scripts/login.sh all</span></pre></div>
+<div class="card"><h3>Contas interativas</h3><p>OpenAI, Anthropic e GitHub sêo autenticados pelos fluxos oficiais.</p><pre><span class="k">./scripts/login.sh all</span></pre></div>
 <div class="card"><h3>OpenRouter ou Ollama</h3><p>O DSH pode usar a nuvem ou um modelo local no host.</p><pre><span class="k">./scripts/configure-openrouter.sh</span></pre></div>
 </div>
 </div></section>
 <section id="guia"><div class="wrap">
 <span class="chip">Guia de uso · passo a passo</span>
 <h2>Instale, autentique e orquestre</h2>
-<p class="sub">Os comandos abaixo são os mesmos usados pelo projeto real.</p>
+<p class="sub">Os comandos abaixo sêo os mesmos usados pelo projeto real.</p>
 <div class="step"><div class="b">1</div><div>
 <h3>Clone o projeto</h3><p>Baixe o runtime e entre na pasta.</p>
 <pre><span class="k">git clone</span> <span class="s">git@github.com:linnoff88-dev/dsh-orchestrator.git</span>
@@ -178,13 +178,13 @@
 <span class="k">./scripts/login.sh github</span></pre>
 </div></div>
 <div class="step"><div class="b">4</div><div>
-<h3>Abra uma sessão isolada</h3><p>Use o painel ou a CLI interna para iniciar um agente em worktree próprio.</p>
+<h3>Abra uma sessêo isolada</h3><p>Use o painel ou a CLI interna para iniciar um agente em worktree próprio.</p>
 <pre><span class="k">./scripts/shell.sh</span>
 <span class="k">orch start codex</span> --cwd /workspace/meu-repo \
   --name api --prompt <span class="s">"implemente os testes"</span> --worktree</pre>
 </div></div>
 <div class="step"><div class="b">5</div><div>
-<h3>Acompanhe e converse</h3><p>Liste sessões, capture a saída ou envie uma nova orientação sem perder o processo.</p>
+<h3>Acompanhe e converse</h3><p>Liste sessões, capture a saída ou envie uma nova orientaçêo sem perder o processo.</p>
 <pre><span class="k">orch list</span>
 <span class="k">orch output</span> ID --lines 500
 <span class="k">orch send</span> ID <span class="s">"rode os testes e corrija as falhas"</span></pre>
@@ -192,19 +192,19 @@
 </div></section>
 <section id="exemplos"><div class="wrap">
 <span class="chip">Exemplos</span>
-<h2>Fluxos que já estão prontos</h2>
+<h2>Fluxos que já estêo prontos</h2>
 <p class="sub">A mesma infraestrutura pode ser operada manualmente ou pelo DSH via MCP.</p>
 <div class="grid g2">
-<div class="card"><h3>🧭 DSH como coordenador</h3><p>O DSH lista sessões, delega uma implementação ao Codex e acompanha a saída pelas ferramentas MCP estruturadas.</p></div>
-<div class="card"><h3>🔀 Dois agentes em paralelo</h3><p>Codex trabalha na API e Claude explora a documentação, cada um em branch e worktree próprios.</p></div>
+<div class="card"><h3>🧭 DSH como coordenador</h3><p>O DSH lista sessões, delega uma implementaçêo ao Codex e acompanha a saída pelas ferramentas MCP estruturadas.</p></div>
+<div class="card"><h3>🔀 Dois agentes em paralelo</h3><p>Codex trabalha na API e Claude explora a documentaçêo, cada um em branch e worktree próprios.</p></div>
 </div>
 </div></section>
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
 <h2>Base pronta para crescer</h2>
 <p class="sub">O núcleo já funciona; as próximas fases podem ampliar observabilidade e governança.</p>
-<div class="phase"><div class="tag">AGORA</div><div class="d"><strong>Runtime multiagente local</strong><span>Painel, API, CLI, MCP, tmux, worktrees, autenticação persistente e backup.</span></div></div>
-<div class="phase"><div class="tag">PRÓXIMO</div><div class="d"><strong>Políticas por projeto</strong><span>Perfis de permissão, limites de concorrência e seleção automática de agente.</span></div></div>
+<div class="phase"><div class="tag">AGORA</div><div class="d"><strong>Runtime multiagente local</strong><span>Painel, API, CLI, MCP, tmux, worktrees, autenticaçêo persistente e backup.</span></div></div>
+<div class="phase"><div class="tag">PRÓXIMO</div><div class="d"><strong>Políticas por projeto</strong><span>Perfis de permissêo, limites de concorrência e seleçêo automática de agente.</span></div></div>
 <div class="phase"><div class="tag">FUTURO</div><div class="d"><strong>Histórico e métricas</strong><span>Eventos estruturados, custos, tempos e retomada orientada pelo painel.</span></div></div>
 </div></section>
 <footer><div class="wrap">

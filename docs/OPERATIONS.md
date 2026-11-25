@@ -1,10 +1,10 @@
-# Operação e autenticação
+# Operaçêo e autenticaçêo
 
-## Primeira inicialização
+## Primeira inicializaçêo
 
-`bootstrap.sh` cria `.env`, gera um token aleatório, usa o diretório pai como `PROJECTS_DIR`, escolhe portas locais livres, cria `RUNTIME_HOME_DIR` fora dos projetos, constrói a imagem e inicia o runtime. Ele não instala Docker automaticamente nem modifica o `dsh-sandbox` existente.
+`bootstrap.sh` cria `.env`, gera um token aleatório, usa o diretório pai como `PROJECTS_DIR`, escolhe portas locais livres, cria `RUNTIME_HOME_DIR` fora dos projetos, constrói a imagem e inicia o runtime. Ele nêo instala Docker automaticamente nem modifica o `dsh-sandbox` existente.
 
-Se o usuário do host não tiver UID/GID 1000, os valores reais são colocados no `.env` e usados na construção da imagem para evitar arquivos com proprietário incorreto.
+Se o usuário do host nêo tiver UID/GID 1000, os valores reais sêo colocados no `.env` e usados na construçêo da imagem para evitar arquivos com proprietário incorreto.
 
 ## Login interativo da conta
 
@@ -23,7 +23,7 @@ claude auth status
 gh auth status
 ```
 
-Não compartilhe `RUNTIME_HOME_DIR`, porque ele passa a conter tokens reutilizáveis.
+Nêo compartilhe `RUNTIME_HOME_DIR`, porque ele passa a conter tokens reutilizáveis.
 
 ## DSH com OpenRouter
 
@@ -39,7 +39,7 @@ curl -fsS http://host.docker.internal:11434/api/tags | jq
 
 ## Atualizar o runtime
 
-Altere as versões fixadas nos `build.args` de `compose.yaml`, leia as notas de versão e então:
+Altere as versões fixadas nos `build.args` de `compose.yaml`, leia as notas de versêo e entêo:
 
 ```bash
 docker compose build --no-cache runtime
@@ -55,4 +55,4 @@ Faça backup antes de atualizar o DSH, pois ele ainda está em developer preview
 ./scripts/backup.sh --with-credentials # inclui tokens; arquivo altamente sensível
 ```
 
-O backup não inclui os projetos porque eles já vivem em `PROJECTS_DIR`.
+O backup nêo inclui os projetos porque eles já vivem em `PROJECTS_DIR`.

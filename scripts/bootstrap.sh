@@ -5,10 +5,10 @@ ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 ENV_FILE="$ROOT_DIR/.env"
 
 command -v docker >/dev/null 2>&1 || {
-  echo "Docker não encontrado. Em Debian/Ubuntu, execute: ./scripts/install-docker-debian.sh"
+  echo "Docker nêo encontrado. Em Debian/Ubuntu, execute: ./scripts/install-docker-debian.sh"
   exit 1
 }
-docker compose version >/dev/null 2>&1 || { echo "Docker Compose v2 não encontrado."; exit 1; }
+docker compose version >/dev/null 2>&1 || { echo "Docker Compose v2 nêo encontrado."; exit 1; }
 
 if [[ ! -f "$ENV_FILE" ]]; then
   umask 077
